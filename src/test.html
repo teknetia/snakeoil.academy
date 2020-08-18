@@ -1,0 +1,73 @@
+---
+layout: default.liquid
+title: test
+event: pyconau-2020
+highlight-talks: 
+- opening-doors-with-json-web-tokens
+---
+
+
+<section class="container py-8">
+	<h2>Talks</h2>
+	<ul>
+		{%- for talk in collections.talks -%}
+			<li><a href="{{ talk.url }}">{{ talk.data.title }}</a> @ {{ talk.data.event }}</li>
+		{%- endfor -%}
+	</ul>
+
+	<h2>Presenters</h2>
+	<ul>
+		{%- for speaker in collections.speakers -%}
+			<li><a href="{{ speaker.url }}">{{ speaker.data.title }}</a></li>
+		{%- endfor -%}
+	</ul>
+
+	<h2>Events</h2>
+	<ul>
+		{%- for event in collections.events -%}
+			<li><a href="{{ event.url }}">{{ event.data.title }}</a></li>
+		{%- endfor -%}
+	</ul>
+
+	<hr>
+
+	<p>{{ event }}</p>
+
+	<hr>
+
+	<h2>Everything</h2>
+	<ul>
+		{%- for item in collections.all -%}
+			<li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+		{%- endfor -%}
+	</ul>
+
+	<hr>
+</section>
+
+<section>
+	<hr>
+		{% assign event_info = collections.events | where: 'fileSlug', event %}
+		{% for each in event_info %}
+			{{ each.data.title }} | 
+			{{ each.data.date }} | 
+			{{ each.url }}<br>
+		{% endfor %}
+	<hr>
+</section>
+
+
+
+<section>
+	<hr>
+		{% for talk in highlight-talks %}
+			<p class="bg-warning">{{ talk }}</p>
+			<ul class="bg-info">
+				{% assign talk_info = collections.talks | where: 'fileSlug', talk %}
+				{% for each in talk_info %}
+					<li><a href="{{ each.url }}">{{ each.data.title }}</a> @ {{ each.data.event }}</li>
+				{% endfor %}
+			</ul>
+		{% endfor %}
+	<hr>
+</section>

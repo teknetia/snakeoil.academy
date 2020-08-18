@@ -1,0 +1,60 @@
+---
+title:
+---
+<!doctype html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>{% if title %}{{ title }} | {% endif %}Snakeoil Academy</title>
+		
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light py-md-3">
+		<div class="container">
+			<a class="navbar-brand" href="/">The Snakeoil Academy</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav ml-auto text-center">
+					<li class="nav-item px-3 {% if '/' == page.url %}active{% endif %}">
+						<a class="nav-link" href="/">Home{% if '/' == page.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+					</li>
+					<li class="nav-item px-3 {% if '/schedule' == page.url %}active{% endif %}">
+						<a class="nav-link" href="/schedule">Schedule{% if '/schedule' == page.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+					</li>
+					<!-- <li class="nav-item px-3 {% if '/previous' == page.url %}active{% endif %}">
+						<a class="nav-link" href="#">Previous Years{% if '/previous' == page.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+					</li> -->
+					<li class="nav-item px-3 {% if '/resources' == page.url %}active{% endif %}">
+						<a class="nav-link" href="/resources">Resources{% if '/resources' == page.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+					</li>
+					<li class="nav-item ml-3">
+						<a class="nav-link btn btn-feature text-light" href="https://2020.pycon.org.au/attend/" target="_blank">Get Tickets!</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		{{ content }}
+	</main>
+
+	<footer class="py-5 text-muted">
+		<div class="container text-center">
+			<a href="https://2020.pycon.org.au" target="_blank" class="text-muted px-1">PyCon Australia</a> | <a href="https://2020.pycon.org.au/conduct/" target="_blank" class="text-muted px-1">Code of Conduct</a> | <a href="/stylish-hat" class="text-muted px-1">Make a Stylish Hat</a><br>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

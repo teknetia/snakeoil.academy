@@ -1,0 +1,83 @@
+---
+permalink: /
+layout: default.liquid
+title: 
+event: pyconau-2020
+highlight-talks: 
+- new-phone-who-dis-human-authentication-in-the-digital-age
+- data-sharing-in-modern-australia
+- security-architecture-from-ancient-times
+- operation-luigi-how-i-hacked-my-friend-without-her-noticing
+- agloe-what-the-map-makers-of-the-1930s-can-teach-us-about-protecting-our-data-in-2018
+- securing-your-companys-data-encryption-deletion-and-other-best-practices
+- opening-doors-with-json-web-tokens
+- threat-modeling-the-death-star
+---
+
+<header class="bg-light">
+	<div class="container text-center py-6 py-md-8 hero-box">
+		<h1>Security & privacy is an often overlooked area of a tech conference. <span class="highlight-text bg-primary text-light">Not anymore!</span></h1>
+	</div>
+</header>
+
+<section class="container py-6 py-md-8 hero-box text-center">
+	<img class="p-curly img-fluid" src="img/paranoid-curlyboi.png">
+	<div class="text">
+		<h2>The Security & Privacy Track</h2>
+		<p>In today’s world, digital security and personal privacy are two extremely crucial and valued aspects of our existence. The Security and Privacy track hopes to share knowledge about both of these concepts, both in sharing information about how to ensure security, and detailing ways we can protect our own privacy.</p>
+		<h2>Hosted by Security & Privacy nerds</h2>
+		<p>We're a bunch of privacy and security nerds who think that all technology can be improved with considered thought around its security and privacy implications. From thinking about how we can respect privacy while still offering services through to ensuring your security posture is good enough to be a sales tool, we're excited to be bringing the track back in 2020.</p>
+	</div>
+	<div class="organisers pt-5 mx-auto">
+		<div class="row">
+			<div class="col">
+				<img class="img-fluid" src="img/eliza.png">
+				<h3 class="mt-4">Eliza Sorensen</h3>
+				<p class="text-secondary"><a href="https://twitter.com/zemmiph0bia" target="_blank">@zemmiph0bia</a></p>
+				<p class="text-secondary">Co-founder <a href="https://assemblyfour.com/">Assembly Four</a>,<br>former Electronic Frontier Australia board member.</p>
+			</div>
+			<div class="col">
+				<img class="img-fluid" src="img/teknetia.jpg">
+				<h3 class="mt-4">Chris Watt</h3>
+				<p class="text-secondary"><a href="https://twitter.com/teknetia" target="_blank">@teknetia</a></p>
+				<p class="text-secondary">Product & Process Manager, Hive Technology Labs</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-6 py-md-8 text-center bg-light">
+	<div class="d-flex flex-wrap justify-content-center highlighted-talks">
+		{% for talk in highlight-talks %}
+			<div class="talk flex-grow-1 p-2 mb-5">
+				{% assign talk_info = collections.talks | where: 'fileSlug', talk %}
+				{% for talk in talk_info %}
+					{% assign speaker_info = collections.speakers | where: 'fileSlug', talk.data.speaker %}
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe src="https://www.youtube-nocookie.com/embed/{{ talk.data.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="h3 mt-3 px-2">{{ talk.data.title }}</h3>
+					<p class="text-secondary">{% for speaker in speaker_info %}{{ speaker.data.title }}{% endfor %}</p>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</section>
+
+<!-- <section class="py-6 py-md-8 text-center bg-light">
+	<div class="d-flex flex-wrap justify-content-center highlighted-talks">
+		{% for talk in highlight-talks %}
+			<div class="talk flex-grow-1 p-2 mb-5">
+				{% assign talk_info = collections.talks | where: 'fileSlug', talk %}
+				{% for talk in talk_info %}
+					{% assign speaker_info = collections.speakers | where: 'fileSlug', talk.data.speaker %}
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe src="https://www.youtube-nocookie.com/embed/{{ talk.data.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="h3 mt-3 px-2"><a href="{{ talk.url }}" class="text-dark">{{ talk.data.title }}</a></h3>
+					<p class="text-secondary">{% for speaker in speaker_info %}<a href="{{ speaker.url }}" class="text-secondary">{{ speaker.data.title }}</a>{% endfor %}</p>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</section> -->
