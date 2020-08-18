@@ -54,7 +54,7 @@ highlight-talks:
 				{% for talk in talk_info %}
 					{% assign speaker_info = collections.speakers | where: 'fileSlug', talk.data.speaker %}
 					<div class="embed-responsive embed-responsive-16by9">
-						<iframe src="https://www.youtube-nocookie.com/embed/{{ talk.data.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe src="" data-src="https://www.youtube-nocookie.com/embed/{{ talk.data.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<p class="h3 mt-3 px-2">{{ talk.data.title }}</h3>
 					<p class="text-secondary">{% for speaker in speaker_info %}{{ speaker.data.title }}{% endfor %}</p>
@@ -81,3 +81,15 @@ highlight-talks:
 		{% endfor %}
 	</div>
 </section> -->
+
+<script type="text/javascript">
+	function init() {
+		var vidDefer = document.getElementsByTagName('iframe');
+		for (var i=0; i<vidDefer.length; i++) {
+			if(vidDefer[i].getAttribute('data-src')) {
+				vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+			}
+		}
+	}
+	window.onload = init;
+</script>
