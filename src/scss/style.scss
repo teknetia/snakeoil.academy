@@ -127,6 +127,16 @@ body {
 
 .resources .card {
 	@include media-breakpoint-up(md) {
-		flex: 1 0 20%;
+		flex: 1 0 31%;
+		max-width: 31%;
 	}
+
+	@include media-breakpoint-up(lg) {
+		flex: 1 0 23%;
+		max-width: 23%;
+	}
+}
+
+.resource-heading {
+	max-width: 600px;
 }
