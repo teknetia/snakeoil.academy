@@ -1,0 +1,39 @@
+{% extends "./_includes/default.njk" %}
+ 
+{% block title %}Sitemap{% endblock %}
+ 
+{% block content %}
+  <div class="container px-5 max-w-prose text-lg mx-auto my-16 md:my-32 leading-relaxed">
+
+    <h1 class="text-4xl md:text-6xl text-center mb-8 md:mb-12">Sitemap</h1>
+
+    <img class="mb-8 md:mb-12 max-h-6 md:max-h-12 mx-auto" src="/img/paranoid-curlyboi.png">
+
+    <h2 class="font-medium title-font text-gray-900 text-3xl mb-4">Events</h2>
+    <ul class="list-disc pl-6">
+      {% for event in collections.events %}
+        <li><a href="{{ event.url }}" class="hover:text-alt">{{ event.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <hr class="my-12">
+
+    <h2 class="font-medium title-font text-gray-900 text-3xl mb-4">Speakers</h2>
+    <ul class="list-disc pl-6">
+      {% for speaker in collections.speakers %}
+        <li><a href="{{ speaker.url }}" class="hover:text-alt">{{ speaker.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <hr class="my-12">
+
+    <h2 class="font-medium title-font text-gray-900 text-3xl mb-4">Talks</h2>
+    <ul class="list-disc pl-6">
+      {% for talk in collections.talks %}
+        <li><a href="{{ talk.url }}" class="hover:text-alt">{{ talk.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+{% endblock %}

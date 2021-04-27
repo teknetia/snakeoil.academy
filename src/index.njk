@@ -1,0 +1,72 @@
+{% extends "./_includes/default.njk" %}
+ 
+{% block title %}Sitemap{% endblock %}
+ 
+{% block content %}
+
+  <section class="bg-gray-100">
+    <div class="container px-5 py-12 md:py-32 mx-auto max-w-screen-md">
+      <h1 class="font-light md:font-thin text-3xl md:text-6xl text-center leading-tight md:leading-tight">
+        Security & privacy is an often overlooked area of a tech conference.
+        <span class="bg-brand mt-2 px-4 md:px-6 pt-1 pb-2 md:pt-2 md:pb-3 text-white inline-block rounded-lg md:rounded-xl leading-none">Not anymore!</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-32 text-base md:text-lg">
+    <div class="container px-5 mx-auto max-w-screen-md">
+      <h2 class="text-4xl md:text-6xl text-center">Snakeoil Academy</h2>
+      <p class="text-xl md:text-3xl text-center text-gray-500 mt-2 md:mt-4 mb-8 md:mb-12">The Security & Privacy Track</p>
+      <img class="mb-8 md:mb-12 max-h-6 md:max-h-16 mx-auto" src="/img/paranoid-curlyboi.png">
+      <p class="mb-12">In today’s world, digital security and personal privacy are two extremely crucial and valued aspects of our existence. The Security and Privacy track hopes to share knowledge about both of these concepts, both in sharing information about how to ensure security, and detailing ways we can protect our own privacy.</p>
+    </div>
+
+    <div class="container px-5 mx-auto max-w-screen-md">
+      <h2 class="text-3xl text-center mb-6">Hosted by Security & Privacy nerds</h2>
+      <p class="mb-10">We're a bunch of privacy and security nerds who think that all technology can be improved with considered thought around its security and privacy implications. From thinking about how we can respect privacy while still offering services through to ensuring your security posture is good enough to be a sales tool.</p>
+      <div class="flex flex-col md:flex-row items-start">
+        <div class="flex flex-col items-center text-center justify-center w-full lg:w-1/2 lg:pr-5 mb-10 md:mb-0">
+          <img class="w-32 h-32 rounded-full border-4 border-brand" src="/img/eliza.png">
+          <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Eliza Sorensen</h2>
+          <p class="text-sm text-gray-500 text-center">she/they</p>
+          <div class="w-12 h-1 bg-brand rounded mt-2 mb-4"></div>
+          <a href="https://twitter.com/zemmiph0bia" target="_blank" class="text-brand hover:text-alt mb-2">@zemmiph0bia</a>
+          <p class="text-base">Co-founder <a class="text-brand hover:text-alt" href="https://assemblyfour.com/">Assembly Four</a>, former Electronic Frontier Australia board member.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center justify-center w-full lg:w-1/2 lg:pl-5">
+          <img class="w-32 h-32 rounded-full border-4 border-brand" src="/img/teknetia.jpg">
+          <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Chris Watt</h2>
+          <p class="text-sm text-gray-500 text-center">he/they</p>
+          <div class="w-12 h-1 bg-brand rounded mt-2 mb-4"></div>
+          <a href="https://twitter.com/teknetia" target="_blank" class="text-brand hover:text-alt mb-2">@teknetia</a>
+          <p class="text-base">Product & Process Manager, Hive Technology Labs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-32 text-base md:text-lg border-t">
+    <div class="container px-5 mx-auto max-w-screen-lg">
+      <h2 class="text-4xl md:text-6xl mb-6 text-center">Past Events</h2>
+      <div class="flex flex-col md:flex-row">
+        {% for event in collections.events %}
+          <div class="w-full h-full md:w-1/3">
+            <div class="bg-gray-100 rounded my-4 mx-0 md:mx-4 p-4 text-center">
+              <h3 class="text-lg md:text-2xl font-medium mb-2">{{ event.data.title }}</h3>
+              <p class="text-sm text-gray-500 mb-6">{{ event.data.date | neatDate }}</p>
+              <p class="mb-6">{{ event.data.excerpt }}</p>
+              <a href="{{ event.url }}" class="inline-flex items-center bg-brand border-0 py-1 px-3 hover:bg-alt rounded text-white">
+                See the talks
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
