@@ -1,9 +1,10 @@
 ---
 title: "Justin Warren"
-image:
-twitter:
+pronouns: "he/him"
+image: "justin-warren.jpg"
+twitter: jpwarren
 linkedin:
-website:
+website: "https://www.eigenmagic.com"
 ---
 
 Justin is a technology analyst and Python coder who helps tech companies with their marketing when he’s not filing Freedom of Information requests via RightToKnow.com.au. He is the founder and chief analyst of consulting firm PivotNine Pty Ltd.

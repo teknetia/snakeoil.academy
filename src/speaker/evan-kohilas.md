@@ -1,8 +1,8 @@
 ---
 title: "Evan Kohilas"
 pronouns: "he/they"
-image:
-twitter:
+image: "evan-kohilas.jpg"
+twitter: ekohilas
 linkedin:
 website:
 ---

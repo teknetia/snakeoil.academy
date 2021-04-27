@@ -1,7 +1,8 @@
 ---
 title: Liam O
+pronouns: "he/him"
 image:
-twitter:
+twitter: liamosaur
 linkedin:
 website:
 ---

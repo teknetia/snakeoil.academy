@@ -3,6 +3,7 @@ title: "Safely eval Python syntax using the AST module"
 speaker: tim-savage
 con_link: https://2019.pycon-au.org/talks/safely-eval-python-syntax-using-the-ast-module
 youtube: "7e-2nUqnNqE"
+slides: https://timsavage.github.io/pyconau2019/
 
 excerpt: "Allow your users to supply queries or define rules using Python syntax and safely eval them. Processing an AST into safely executable code."
 ---

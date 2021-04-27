@@ -1,7 +1,8 @@
 ---
 title: "Sean Johnson"
-image:
-twitter:
+pronouns: "he/him"
+image: "sean-johnson.jpg"
+twitter: seansonbronson
 linkedin:
 website:
 ---

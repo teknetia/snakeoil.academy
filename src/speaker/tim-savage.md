@@ -1,6 +1,7 @@
 ---
 title: "Tim Savage"
-image:
+pronouns: "he/him"
+image: "tim-savage.jpg"
 twitter:
 linkedin:
 website:

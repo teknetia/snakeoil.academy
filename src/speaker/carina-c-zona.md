@@ -1,7 +1,8 @@
 ---
 title: "Carina C. Zona"
-image:
-twitter:
+pronouns: "she/her"
+image: "carina-c-zona.jpeg"
+twitter: cczona
 linkedin:
 website:
 ---

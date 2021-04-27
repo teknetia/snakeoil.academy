@@ -1,7 +1,8 @@
 ---
 title: errbufferoverfl
-image:
-twitter:
+pronouns: "she/they"
+image: "errbufferoverfl.jpeg"
+twitter: errbufferoverfl
 linkedin:
 website:
 ---

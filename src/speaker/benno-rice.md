@@ -1,7 +1,8 @@
 ---
 title: "Benno Rice"
+probounds: "he/him"
 image:
-twitter:
+twitter: jeamland
 linkedin:
 website:
 ---

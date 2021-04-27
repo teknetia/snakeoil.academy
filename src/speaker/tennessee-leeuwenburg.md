@@ -1,7 +1,8 @@
 ---
 title: "Tennessee Leeuwenburg"
-image:
-twitter:
+pronouns: "he/him"
+image: "tennessee-leeuwenburg.jpg"
+twitter: tleeuwenburg
 linkedin:
 website:
 ---

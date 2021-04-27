@@ -1,7 +1,8 @@
 ---
 title: "Sarah Young"
-image:
-twitter:
+pronouns: "she/her"
+image: 
+twitter: "_sarahyo"
 linkedin:
 website:
 ---

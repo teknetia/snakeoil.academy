@@ -1,7 +1,8 @@
 ---
 title: "Gajendra Deshpande"
-image:
-twitter:
+pronouns: "he/him"
+image: 
+twitter: 
 linkedin:
 website:
 ---

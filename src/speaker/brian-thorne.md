@@ -1,9 +1,10 @@
 ---
 title: Brian Thorne
-image:
+pronouns: "he/him"
+image: 
 twitter:
 linkedin:
-website:
+website: "https://brian.thorne.link"
 ---
 
 I lead a small engineering focused team at Data61 called “Confidential Computing”. We work on privacy preserving solutions:
