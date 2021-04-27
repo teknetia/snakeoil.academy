@@ -1,0 +1,90 @@
+{% extends "./default.njk" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+  <section class="text-gray-600 body-font">
+    
+    <div class="container px-5 max-w-prose text-lg mx-auto my-16 md:my-32">
+      <h1 class="text-4xl md:text-6xl text-center mb-8 md:mb-12 leading-relaxed">{{ title }}</h1>
+
+      <img class="mb-8 md:mb-12 max-h-6 md:max-h-12 mx-auto" src="/img/paranoid-curlyboi.png">
+
+      <article class="prose md:prose-xl leading-relaxed">
+        {{ content | safe }}
+      </article>     
+    </div>
+
+  </section>
+
+  <section class="container max-w-screen-lg px-5 text-lg mx-auto my-12 md:my-32">
+    {% for talk in collections.talks | talkFilter(page.fileSlug) %}
+      {% set speakerInfo = collections.speakers | speakerFilter(talk.data.speaker) %}
+
+      <div class="flex flex-col md:flex-row pt-12 mt-12 border-t">
+
+        <div class="w-full md:w-2/5 pr-0 md:pr-12">
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe src="" data-src="https://www.youtube-nocookie.com/embed/{{ talk.data.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="w-full md:w-3/5">
+          <h2 class="text-xl md:text-4xl group font-medium md:font-light leading-normal md:leading-snug mb-4 mt-4 md:mt-0">
+            <a href="{{ talk.url }}" class="group-hover:text-alt">
+              {{ talk.data.title }}
+              <span class="text-brand group-hover:text-alt">
+                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 inline" viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+          </h2>
+
+          <div class="container mx-auto flex flex-wrap md:mt-8 group">
+            <a href="{{ speakerInfo[0].url }}" class="flex items-center">
+              {% if speakerInfo[0].data.image %}
+                <img src="/img/speakers/{{ speakerInfo[0].data.image }}" class="w-12 h-12 mr-3 rounded-full object-cover" alt="">
+              {% else %}
+                <div class="w-12 h-12 mr-3 rounded-full flex items-center justify-center bg-brand group-hover:bg-alt text-white mx-auto">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              {% endif %}
+              <span>
+                <p class="font-medium title-font text-gray-900 text-lg group-hover:text-alt leading-snug">
+                  {{ speakerInfo[0].data.title }}
+                </p>
+                <p class="text-sm text-gray-500">
+                  {{ speakerInfo[0].data.pronouns }}
+                </p>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    {% endfor %}
+  </section>
+
+  <script type="text/javascript">
+    function init() {
+      var vidDefer = document.getElementsByTagName('iframe');
+      for (var i=0; i<vidDefer.length; i++) {
+        if(vidDefer[i].getAttribute('data-src')) {
+          vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+        }
+      }
+    }
+    window.onload = init;
+  </script>
+
+{% endblock %}
+
+
+{# <li><a href="{{ talk.url }}">{{ talk.data.title }}</a></li> #}

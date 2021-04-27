@@ -1,0 +1,43 @@
+{% extends "./_includes/default.njk" %}
+
+{% block title %}About{% endblock %}
+ 
+{% block content %}
+  <div class="container px-5 max-w-prose text-lg mx-auto  my-16 md:my-32 leading-relaxed">
+
+    <h1 class="text-4xl md:text-6xl text-center mb-8 md:mb-12">The Snakeoil Academy</h1>
+
+    <img class="mb-8 md:mb-12 max-h-6 md:max-h-12 mx-auto" src="/img/paranoid-curlyboi.png">
+
+    <p class="mb-6">Digital security and privacy are not just tools or a checklist to follow but an incredibly important set of skills for both our own development & management processes and the protection and confidence of our users and their information. No one wants to see their company in the news for the latest & greatest data breach!</p>
+
+    <p class="mb-6">Snakeoil Academy started as the Security & Privacy track in 2018 as a place to share that hard won knowledge, concepts, best practices and thought exercises to ensure that you had a strong foundation in the practices of security, privacy and ethics to take back to your organisation and improve the posture and culture.</p>
+
+    <p class="mb-6">Since then, the track has matured as we started to see companies and government using technology to further invade and surveil the general public without consent and infringing on a persons expectation of reasonable privacy.</p>
+
+    <p>As a community, we are impacted by the bad actors which in turn inform regulation and legislation which is often hastily passed. As an industry we need to be aware of the impact that outside forces can have on out technical operations & products.</p>
+
+    <section class="mt-20">
+      <h2 class="text-3xl text-center mb-6">Hosted by Security & Privacy nerds</h2>
+      <p class="mb-10">We're a bunch of privacy and security nerds who think that all technology can be improved with considered thought around its security and privacy implications. From thinking about how we can respect privacy while still offering services through to ensuring your security posture is good enough to be a sales tool.</p>
+      <div class="flex flex-col md:flex-row items-start">
+        <div class="flex flex-col items-center text-center justify-center w-full lg:w-1/2 lg:pr-5 mb-10 md:mb-0">
+          <img class="w-32 h-32 rounded-full border-4 border-brand" src="/img/eliza.png">
+          <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Eliza Sorensen</h2>
+          <div class="w-12 h-1 bg-brand rounded mt-2 mb-4"></div>
+          <a href="https://twitter.com/zemmiph0bia" target="_blank" class="text-brand hover:text-alt mb-2">@zemmiph0bia</a>
+          <p class="text-base">Co-founder <a class="text-brand hover:text-alt" href="https://assemblyfour.com/">Assembly Four</a>, former Electronic Frontier Australia board member.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center justify-center w-full lg:w-1/2 lg:pl-5">
+          <img class="w-32 h-32 rounded-full border-4 border-brand" src="/img/teknetia.jpg">
+          <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Chris Watt</h2>
+          <div class="w-12 h-1 bg-brand rounded mt-2 mb-4"></div>
+          <a href="https://twitter.com/teknetia" target="_blank" class="text-brand hover:text-alt mb-2">@teknetia</a>
+          <p class="text-base">Product & Process Manager, Hive Technology Labs</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+{% endblock %}
