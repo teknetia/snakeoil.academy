@@ -18,8 +18,8 @@
 
   </section>
 
-  {# <section class="container max-w-screen-lg px-5 text-lg mx-auto my-12 md:my-32">
-    {% for talk in collections.talks | speakerFilter(page.fileSlug) %}
+  <section class="container max-w-screen-lg px-5 text-lg mx-auto my-12 md:my-32">
+    {% for talk in collections.talks | talkFilter(page.fileSlug) %}
       {% set speakerInfo = collections.speakers | speakerFilter(talk.data.speaker) %}
 
       <div class="flex flex-col md:flex-row pt-12 mt-12 border-t">
@@ -70,7 +70,7 @@
       </div>
 
     {% endfor %}
-  </section> #}
+  </section>
 
   <script type="text/javascript">
     function init() {
