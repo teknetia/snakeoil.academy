@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/_includes/styles/tailwind.css -o _site/style.css && cleancss _site/style.css -o _site/style.css",
-    "start": "npm-run-all --parallel watch:*",
+    "start": "npm run build && npm-run-all --parallel watch:*",
     "watch:eleventy": "eleventy --serve --watch",
     "watch:postcss": "NODE_ENV=development postcss src/_includes/styles/tailwind.css -o _tmp/style.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
